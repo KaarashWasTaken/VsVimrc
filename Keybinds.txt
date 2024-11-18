@@ -1,0 +1,30 @@
+let mapleader = " "
+
+nnoremap gn :vsc Edit.GoToNextIssueInFile<CR>
+nnoremap gp :vsc Edit.GoToPreviousIssueInFile<CR>
+nnoremap <leader>e :vsc View.ErrorList<CR>
+
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+nnoremap <leader>b :vsc Debug.ToggleBreakpoint<CR>
+nnoremap <leader>w :vsc File.SaveAll<CR>
+
+nnoremap <leader>ff :vsc File.OpenFile<CR>
+nnoremap <leader>fs :vsc Edit.GoToFile<CR>
+nnoremap <leader>fd :vsc File.Get<CR>
+nnoremap <leader>fa :vsc Window.SolutionExplorerSearch<CR>
+nnoremap <leader>fq :vsc Window.WindowSearch<CR>
+
+nnoremap <leader>fp :vsc Edit.FindinFiles<CR>
+nnoremap <leader>; A;<CR>
+nnoremap gr :vsc Edit.FindAllReferences<CR>
+
+xnoremap <leader>p "_dP<CR>
+
+vnoremap gc :vsc Edit.ToggleBlockComment<CR>
+vnoremap J :vsc Edit.MoveSelectedLinesDown<CR>
+vnoremap K :vsc Edit.MoveSelectedLinesUp<CR>
+
+
