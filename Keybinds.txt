@@ -1,30 +1,65 @@
 let mapleader = " "
 
+" Go to next problem in current file
 nnoremap gn :vsc Edit.GoToNextIssueInFile<CR>
+" Go to previous problem in current file
 nnoremap gp :vsc Edit.GoToPreviousIssueInFile<CR>
+" Open Error list
 nnoremap <leader>e :vsc View.ErrorList<CR>
 
-nnoremap n nzzzv
-nnoremap N Nzzzv
+" Center next matching search
+nnoremap n nzz
+nnoremap N Nzz
+" Keep cursor at the same spot after merging lines
 nnoremap J mzJ`z
+" Go to end of line
+nnoremap L $
+" Go to start of line
+nnoremap H ^
 
+" Toggle breakpoint
 nnoremap <leader>b :vsc Debug.ToggleBreakpoint<CR>
+" Save all files
 nnoremap <leader>w :vsc File.SaveAll<CR>
 
-nnoremap <leader>ff :vsc File.OpenFile<CR>
-nnoremap <leader>fs :vsc Edit.GoToFile<CR>
-nnoremap <leader>fd :vsc File.Get<CR>
-nnoremap <leader>fa :vsc Window.SolutionExplorerSearch<CR>
-nnoremap <leader>fq :vsc Window.WindowSearch<CR>
+" Go to file in file explorer
+nnoremap <leader>fg :vsc File.OpenFile<CR>
+" Go to file opened in visual studio
+nnoremap <leader>ff :vsc Edit.GoToFile<CR>
+" Find file in solution explorer
+nnoremap <leader>fs :vsc Window.SolutionExplorerSearch<CR>
+" Find sequence in files
+nnoremap <leader>rg :vsc Edit.FindinFiles<CR>
 
-nnoremap <leader>fp :vsc Edit.FindinFiles<CR>
-nnoremap <leader>; A;<CR>
+" Add semicolon to end of line
+nnoremap <leader>; A;<Esc>
+
+" Find all references of variable
 nnoremap gr :vsc Edit.FindAllReferences<CR>
+" Rename variable
+noremap gR :vsc Refactor.Rename<CR>
 
-xnoremap <leader>p "_dP<CR>
+" Unassign arrow keys in normal mode
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
+nnoremap <Up> <Nop>
+nnoremap <Down> <Nop>
 
+" Apply suggestion
+nnoremap <C-y> :vsc OtherContextMenus.SuggestionList.Edit.IntelliCode.ApplyAll<CR>
+" Next suggestion
+nnoremap <C-n> :vsc OtherContextMenus.SuggestionList.Edit.IntelliCode.Next<CR>
+" Previous suggestion
+nnoremap <C-p> :vsc OtherContextMenus.SuggestionList.Edit.IntelliCode.Previous<CR>
+
+" Paste without copying to buffer
+xnoremap <leader>p "_dP
+" Yank to system clipboard
+xnoremap <leader>y "+y
+xnoremap <leader>Y "+Y
+
+" Toggle comment
 vnoremap gc :vsc Edit.ToggleBlockComment<CR>
+" Move selected line
 vnoremap J :vsc Edit.MoveSelectedLinesDown<CR>
 vnoremap K :vsc Edit.MoveSelectedLinesUp<CR>
-
-
