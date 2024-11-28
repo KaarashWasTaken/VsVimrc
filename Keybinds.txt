@@ -51,15 +51,9 @@ nnoremap <Right> <Nop>
 nnoremap <Up> <Nop>
 nnoremap <Down> <Nop>
 
-"" Apply suggestion
-"nnoremap <C-y> :vsc OtherContextMenus.SuggestionList.Edit.IntelliCode.ApplyAll<CR>
-"" Next suggestion
-"nnoremap <C-n> :vsc OtherContextMenus.SuggestionList.Edit.IntelliCode.Next<CR>
-"" Previous suggestion
-"nnoremap <C-p> :vsc OtherContextMenus.SuggestionList.Edit.IntelliCode.Previous<CR>
-inoremap <C-n> <Down>
-inoremap <C-p> <Up>
-inoremap <C-y> <Tab><CR>
+inoremap <C-n> <Nop>
+inoremap <C-p> <Nop>
+inoremap <C-y> <Tab>
 
 " Paste without copying to buffer
 xnoremap <leader>p "_dP
