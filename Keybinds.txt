@@ -1,6 +1,6 @@
 let mapleader = " "
 au BufEnter * :set rnu
-
+au BufEnter * :set ignorecase
 
 " Go to next problem in current file
 nnoremap gn :vsc Edit.GoToNextIssueInFile<CR>
