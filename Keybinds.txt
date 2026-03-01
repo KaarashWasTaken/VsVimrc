@@ -2,6 +2,13 @@ let mapleader = " "
 au BufEnter * :set rnu
 au BufEnter * :set ignorecase
 
+" Go to end of line
+noremap L $
+" Go to start of line
+noremap H ^
+
+" Go to next capital letter
+noremap <leader>w /\u<CR>
 " Go to next problem in current file
 nnoremap gn :vsc Edit.GoToNextIssueInFile<CR>
 " Go to previous problem in current file
@@ -14,17 +21,13 @@ nnoremap n nzz
 nnoremap N Nzz
 " Keep cursor at the same spot after merging lines
 nnoremap J mzJ`z
-" Go to end of line
-nnoremap L $
-" Go to start of line
-nnoremap H ^
 
 " Add new function comment block
-nnoremap <leader>nc o//------------------------------------------------------------------------------<Esc>o/**<Esc>lxo*/<CR>
+nnoremap <leader>nc o//------------------------------------------------------------------------------<Esc>o/**<Esc>lxo*/<Esc>
 " Toggle breakpoint
 nnoremap <leader>b :vsc Debug.ToggleBreakpoint<CR>
 " Save all files
-nnoremap <leader>w :vsc File.SaveAll<CR>
+nnoremap <leader>W :vsc File.SaveAll<CR>
 
 " Go to file in file explorer
 nnoremap <leader>fg :vsc File.OpenFile<CR>
@@ -51,12 +54,20 @@ nnoremap <Right> <Nop>
 nnoremap <Up> <Nop>
 nnoremap <Down> <Nop>
 
+"" Apply suggestion
+"inoremap <C-y> <Esc>:vsc OtherContextMenus.SuggestionList.Edit.IntelliCode.ApplyAll<CR>
+inoremap <C-y> <Nop>
+"" Next suggestion
+"inoremap <C-n> <Esc>:vsc OtherContextMenus.SuggestionList.Edit.IntelliCode.Next<CR>
 inoremap <C-n> <Nop>
+"" Previous suggestion
+"inoremap <C-p> <Esc>:vsc OtherContextMenus.SuggestionList.Edit.IntelliCode.Previous<CR>
 inoremap <C-p> <Nop>
-inoremap <C-y> <Tab>
 
 " Paste without copying to buffer
 xnoremap <leader>p "_dP
+" Paste from system clipboard
+nnoremap <leader>p "+p
 " Yank to system clipboard
 xnoremap <leader>y "+y
 xnoremap <leader>Y "+Y
@@ -66,3 +77,5 @@ vnoremap gc :vsc Edit.ToggleBlockComment<CR>
 " Move selected line
 vnoremap J :vsc Edit.MoveSelectedLinesDown<CR>
 vnoremap K :vsc Edit.MoveSelectedLinesUp<CR>
+
+
